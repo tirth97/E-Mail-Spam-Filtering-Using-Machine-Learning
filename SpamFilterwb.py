@@ -39,7 +39,7 @@ def train(features, samples_proportion):
     classifier = NaiveBayesClassifier.train(train_set)
     return train_set, test_set, classifier
  
-def evaluate(test_set, classifier):
+def evaluate(train_set,test_set, classifier):
     # check how the classifier performs on the training and test sets
     print ('Accuracy on the training set = ' + str(classify.accuracy(classifier, train_set)))
     print ('Accuracy of the test set = ' + str(classify.accuracy(classifier, test_set)))
@@ -71,6 +71,6 @@ if __name__=="__main__":
 
     time2=time.time()
     # evaluate its performance
-    evaluate(test_set, classifier)
+    evaluate(train_set,test_set, classifier)
 
     print("Time for testing: %s"%(time.time()-time2))
